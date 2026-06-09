@@ -24,7 +24,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Programmatically extract additional classifications
     let tags = tagger.generate_tags(body_text.to_string());
-    document_tags.append(tags);
+    document_tags.append(&mut tags);
 
     // [!] At this point, document_tags can be mirrored safely to an RDBMS
 
