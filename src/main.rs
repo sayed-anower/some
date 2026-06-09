@@ -23,7 +23,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut document_tags = vec!["programming".to_string(), "rust".to_string()];
 
     // Programmatically extract additional classifications
-    let tags = tagger.generate_tags(body_text.to_string());
+    let mut tags = tagger.generate_tags(body_text.to_string());
     document_tags.append(&mut tags);
 
     // [!] At this point, document_tags can be mirrored safely to an RDBMS
